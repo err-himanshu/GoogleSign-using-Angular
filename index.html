@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="googleSignin">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Google sign in using angularJs </title>
+        <!-- Custom Javascript -->
+				<script src="https://apis.google.com/js/client.js?onload=init"></script>
+        <script src="lib/angular.min.js"></script>
+        <script src="lib/angular-route.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/Controller.js"></script>
+				<script src="js/GoogleService.js"></script>
+    </head>
+    <body ng-controller="loginController">
+			<button type="button" class="" ng-click="googleLogin($event);">
+			<i class="fa fa-google"></i> Sign in
+			 </button>
+    </body>
+
+</html>
