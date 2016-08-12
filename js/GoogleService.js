@@ -8,7 +8,7 @@
 'use strict';
 app.service('GoogleService', function($q,$window){
 
-//signin method
+  //signin method
      this.signIn = function () {
          var defered = $q.defer();
          $window.signinCallback = function (response) {

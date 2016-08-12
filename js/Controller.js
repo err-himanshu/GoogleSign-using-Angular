@@ -15,6 +15,9 @@ app.controller('loginController', function ($scope,$window,$http,GoogleService) 
       GoogleService.signIn().then(function (response) {
           $http.get("https://www.googleapis.com/plus/v1/people/me?access_token="+response.access_token).success(function(data) {
               console.log(data);
+              /*
+                  YOUR REST CODE HERE
+               */
           }).then(function() {
           });
       });
