@@ -20,9 +20,16 @@ and open the template in the editor.
 				<script src="js/GoogleService.js"></script>
     </head>
     <body ng-controller="loginController">
-			<button type="button" class="" ng-click="googleLogin($event);">
+			<button type="button" ng-hide="userinfo" class="" ng-click="googleLogin($event);">
 			<i class="fa fa-google"></i> Sign in
 			 </button>
+      <div class="" ng-show="userinfo">
+        <h3>Hello {{user.displayName}} </h3>
+        <img ng-src="{{user.image.url}}" alt="User Profile Image" />
+        <p>
+          Email Address : {{user.emails[0].value}}
+        </p>
+      </div>
     </body>
 
 </html>
