@@ -9,15 +9,15 @@
 //controller for login
 app.controller('loginController', function ($scope,$window,$http,GoogleService) {
     //function for login via google
+    $scope.user = {};
     $scope.googleLogin  =   function($event) {
       $event.stopPropagation();
       $event.preventDefault();
       GoogleService.signIn().then(function (response) {
           $http.get("https://www.googleapis.com/plus/v1/people/me?access_token="+response.access_token).success(function(data) {
-              console.log(data);
-              /*
-                  YOUR REST CODE HERE
-               */
+            $scope.userinfo = true;
+            $scope.user = data;
+            console.log($scope.user);
           }).then(function() {
           });
       });
